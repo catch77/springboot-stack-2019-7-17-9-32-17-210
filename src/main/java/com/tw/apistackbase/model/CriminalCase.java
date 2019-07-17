@@ -2,6 +2,7 @@ package com.tw.apistackbase.model;
 
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.OrderBy;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
