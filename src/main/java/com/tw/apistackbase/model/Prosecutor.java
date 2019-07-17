@@ -1,25 +1,24 @@
 package com.tw.apistackbase.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
-import java.util.List;
 
 @Entity
-public class Procuratorate {
+public class Prosecutor {
 
     @Id
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid")
     private String id;
 
-    @Column(length = 50, unique = true)
     @NotNull
+    @Column(length = 255)
     private String name;
-
-    @OneToMany
-    private List<Prosecutor> prosecutors;
-
 
     public String getId() {
         return id;
@@ -35,13 +34,5 @@ public class Procuratorate {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public List<Prosecutor> getProsecutors() {
-        return prosecutors;
-    }
-
-    public void setProsecutors(List<Prosecutor> prosecutors) {
-        this.prosecutors = prosecutors;
     }
 }
