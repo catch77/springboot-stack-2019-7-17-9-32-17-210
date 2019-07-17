@@ -23,6 +23,10 @@ public class CriminalCase {
     @NotNull
     private String name;
 
+    @NotNull
+    @OneToOne
+    private Procuratorate procuratorate;
+
     @OneToOne
     private CriminalDescription criminalDescription;
 
@@ -56,5 +60,13 @@ public class CriminalCase {
 
     public void setCriminalDescription(CriminalDescription criminalDescription) {
         this.criminalDescription = criminalDescription;
+    }
+
+    public Procuratorate getProcuratorate() {
+        return procuratorate;
+    }
+
+    public void setProcuratorate(Procuratorate procuratorate) {
+        this.procuratorate = procuratorate;
     }
 }
