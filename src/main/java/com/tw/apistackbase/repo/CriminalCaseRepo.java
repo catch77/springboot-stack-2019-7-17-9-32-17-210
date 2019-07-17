@@ -10,9 +10,9 @@ import java.util.Set;
 
 public interface CriminalCaseRepo extends JpaRepository<CriminalCase, String> {
 
-    @OrderBy(clause = "happenTime DESC")
-    List<CriminalCase> findAll();
+//    @Query
+    List<CriminalCase> findAllByOrderByTimeDesc();
 
-    @Query
-    Set<CriminalCase> findByName();
+//    @Query
+//    Set<CriminalCase> findByName();
 }
