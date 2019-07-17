@@ -60,4 +60,21 @@ public class CriminalCaseRepoTest {
         assertEquals("fight", new ArrayList<CriminalCase>((Collection<? extends CriminalCase>) caseRepo.findAllByOrderByTimeDesc()).get(0).getName());
     }
 
+    @Test
+    public void should_return_case_list_by_name() {
+        CriminalCase criminalCase = new CriminalCase();
+        criminalCase.setTime((long)52222);
+        criminalCase.setName("fight");
+        CriminalCase criminalCase1 = new CriminalCase();
+        criminalCase1.setTime((long)6354);
+        criminalCase1.setName("fight1");
+        CriminalCase criminalCase2 = new CriminalCase();
+        criminalCase2.setTime((long)999);
+        criminalCase2.setName("fight2");
+        caseRepo.save(criminalCase);
+        caseRepo.save(criminalCase1);
+        caseRepo.save(criminalCase2);
+        assertEquals("fight", new ArrayList<CriminalCase>( caseRepo.findAllByName("fight")).get(0).getName());
+    }
+
 }

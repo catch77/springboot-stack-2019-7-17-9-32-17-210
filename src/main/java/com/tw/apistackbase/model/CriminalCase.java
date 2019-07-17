@@ -23,7 +23,6 @@ public class CriminalCase {
     @NotNull
     private String name;
 
-//    @NotNull
     @OneToOne
     private CriminalDescription criminalDescription;
 

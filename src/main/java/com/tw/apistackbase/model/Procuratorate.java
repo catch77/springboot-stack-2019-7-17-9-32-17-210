@@ -11,10 +11,24 @@ public class Procuratorate {
     @Id
     private String id;
 
-    @Id
-    @Column(length = 50)
+    @Column(length = 50, unique = true)
     @NotNull
     private String name;
 
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
