@@ -16,5 +16,5 @@ public interface CriminalCaseRepo extends JpaRepository<CriminalCase, String> {
 
     List<CriminalCase> findAllByName(String name);
 
-
+//    List<CriminalCase> findByName(String name);
 }

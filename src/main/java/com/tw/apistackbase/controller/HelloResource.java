@@ -23,5 +23,10 @@ public class HelloResource {
         return ResponseEntity.ok("Hello:" + userName);
     }
 
+    @GetMapping(path = "hello", produces = {"application/json"})
+    public String getHello() {
+        return "Hello";
+    }
+
 
 }

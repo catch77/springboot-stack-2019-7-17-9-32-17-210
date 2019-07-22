@@ -20,7 +20,6 @@ public class Procuratorate {
     @OneToMany
     private List<Prosecutor> prosecutors;
 
-
     public String getId() {
         return id;
     }
